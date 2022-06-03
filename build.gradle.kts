@@ -1,5 +1,4 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import org.jetbrains.kotlin.ir.backend.js.compile
 
 plugins {
 	id("org.springframework.boot") version "2.6.5"
@@ -33,6 +32,10 @@ tasks.withType<KotlinCompile> {
 		freeCompilerArgs = listOf("-Xjsr305=strict")
 		jvmTarget = "17"
 	}
+}
+
+tasks.getByName<Jar>("jar") {
+	enabled = false
 }
 
 tasks.withType<Test> {
