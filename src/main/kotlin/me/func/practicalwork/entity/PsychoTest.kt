@@ -9,9 +9,9 @@ data class PsychoTest(
     @JoinColumn(name = "owner_id", nullable = false)
     val owner: Student = Student(),
     val date: Date = Date(0L),
-    @Column(length = 25500)
+    @Column(length = 3000)
     val data: String = "",
-    @Column(length = 25500)
+    @Column(length = 3000)
     val result: String = "",
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     val id: Long = -1
